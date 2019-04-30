@@ -1,26 +1,68 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Admin from './components/Admin'
+// import Cart from "./components/Cart";
+// import Login from "./components/Login";
+//import AuthenticatedComponent from "./components/Auth";
+import LandingPage from "./components/LandingPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+export class Routing extends Component {    
+  render() {   
+    return (
+      <div>
+        <Router>
+          <div>
+            <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+            <div className="container">
+              <Link className="navbar-brand" to="/" title="Home">
+                Home
+              </Link>
+              <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#mobile-nav"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="mobile-nav">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/l">
+                  {' '}
+                  Players
+                </Link>
+              </li>
+            </ul>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+              <Link className="nav-link" to="/" title="Home">
+                Sign Up
+              </Link>
+              </li>
+              <li className="nav-item">
+              <Link className="nav-link" to="/" title="Home">
+                Log in
+              </Link>
+              </li>
+            </ul>
+             
+             </div>
+            </div>
+            </nav>
+            
+              <Switch>
+                <Route exact path="/" component={LandingPage} />
+              </Switch>
+          </div>
+        </Router>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default Routing;
+
