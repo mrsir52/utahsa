@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Admin from './components/Admin'
-// import Cart from "./components/Cart";
-// import Login from "./components/Login";
-//import AuthenticatedComponent from "./components/Auth";
 import LandingPage from "./components/LandingPage";
-
-
 
 
 export class Routing extends Component {    
@@ -31,8 +25,8 @@ export class Routing extends Component {
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/l">
-                  {' '}
+                <Link className="nav-link" to="/">
+                {' '}
                   Players
                 </Link>
               </li>
