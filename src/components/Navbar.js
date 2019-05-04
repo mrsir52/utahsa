@@ -1,15 +1,10 @@
-import React, { Component } from "react";
-import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
+import React, { Fragment } from 'react'
+import {Link} from 'react-router-dom'
 
-
-export class Routing extends Component {    
-  render() {   
-    return (
-      <div>
-        <Router>
-          <div>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+const Navbar= () => {
+  return (
+    <Fragment>
+         <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
             <div className="container">
               <Link className="navbar-brand" to="/" title="Home">
                 Home
@@ -33,12 +28,12 @@ export class Routing extends Component {
             </ul>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-              <Link className="nav-link" to="/" title="Home">
+              <Link className="nav-link" to="/Register" title="Home">
                 Sign Up
               </Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link" to="/" title="Home">
+              <Link className="nav-link" to="/Login" title="Home">
                 Log in
               </Link>
               </li>
@@ -47,16 +42,7 @@ export class Routing extends Component {
              </div>
             </div>
             </nav>
-            
-              <Switch>
-                <Route exact path="/" component={LandingPage} />
-              </Switch>
-          </div>
-        </Router>
-      </div>
-    );
-  }
+    </Fragment>
+  )
 }
-
-export default Routing;
-
+export default Navbar

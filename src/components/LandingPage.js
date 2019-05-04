@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react'
-//import Navbar from './Navbar'
+import React from 'react'
+import {Link} from 'react-router-dom'
 import '../App.css';
 
-export default function LandingPage() {
-  return (
+
+const LandingPage = () => 
+  
     <div className="landing">
+   
     <div className="dark-overlay landing-inner text-light">
       <div className="container">
         <div className="row">
@@ -16,17 +18,18 @@ export default function LandingPage() {
               from other developers
             </p>
             <hr />
-            <a href="register.html" className="btn btn-lg btn-info mr-2">
+            <Link className="btn btn-lg btn-info mr-2" to='/Register'>
               Sign Up
-            </a>
-            <a href="login.html" className="btn btn-lg btn-light">
+            </Link>
+            <Link className="btn btn-lg btn-light" to='/'>
               Login
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </div>
+   
   </div>
-  )
-}
+  
 
+export default LandingPage
