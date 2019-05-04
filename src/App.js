@@ -4,6 +4,7 @@ import LandingPage from "./components/LandingPage";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Navbar from "./components/Navbar";
+import Alert from "./components/Alert";
 
 //Redux
 import { Provider } from 'react-redux'
@@ -18,6 +19,7 @@ export class Routing extends Component {
           <Navbar />
           <Route exact path="/" component={LandingPage} />
           <section className="container">
+          <Alert />
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
