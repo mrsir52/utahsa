@@ -5,6 +5,7 @@ import { register } from "../actions/auth";
 import axios from "axios";
 import PropTypes from "prop-types";
 
+
 //import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const Register = ({ setAlert, register }) => {
@@ -18,12 +19,35 @@ const Register = ({ setAlert, register }) => {
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = async e => {
+  const onSubmit = e => {
     e.preventDefault();
     if (password !== password2) {
       setAlert("passwords do not match", "danger");
     } else {
-      register({ name, email, password });
+      //register({ name, email, password });
+      const url = "http://localhost:5000/api/users";
+      const data = JSON.stringify({
+        name,
+        email,
+        password,
+        password2
+      });
+     
+      e.preventDefault();
+      fetch(url, {
+        method: "POST",
+        body: data,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        //this will refresh the window once you hit submit
+        .then(() => window.location.reload(true));
+    
+
+
+
+
     }
   };
 
